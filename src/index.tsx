@@ -1,76 +1,25 @@
-import { useEffect } from "react";
-import { render } from "react-dom";
+import * as reactDom from "react-dom";
 import "./index.scss";
-import { App } from "./App";
-import {
-    KcApp as KcAppBase,
-    defaultKcProps,
-    getKcContext,
-    kcMessages,
-    useKcLanguageTag
-} from "keycloakify";
-import { useCssAndCx } from "tss-react";
-import tos_en_url from "./tos_en.md";
-import tos_fr_url from "./tos_fr.md";
 import "./kcMessagesExtension"
+import {KcApp} from "./ui/components/KCApp/KcApp";
+import {kcContext} from "./ui/components/KCApp/kcContext";
+import {CacheProvider} from "@emotion/react";
+import createCache from "@emotion/cache";
+import {ThemeProvider} from "@mui/material/styles";
+import theme from "ui/theme";
 
-const { kcContext } = getKcContext({
-    /* Uncomment to test th<e login page for development */
-    //"mockPageId": "login.ftl"
+export const muiCache = createCache({
+  "key": "mui",
+  "prepend": true
 });
 
-if (kcContext !== undefined) {
-    console.log(kcContext);
-}
-
-render(
-    kcContext === undefined ?
-        <App /> :
-        <KcApp />,
+// @ts-ignore
+reactDom.render(
+    <CacheProvider value={muiCache}>
+      <ThemeProvider theme={theme}>
+        <KcApp // @ts-ignore
+            kcContext={kcContext}/>
+      </ThemeProvider>
+    </CacheProvider>,
     document.getElementById("root")
 );
-
-function KcApp() {
-
-    if (kcContext === undefined) {
-        throw new Error();
-    }
-
-    const { kcLanguageTag } = useKcLanguageTag();
-
-    const { css } = useCssAndCx();
-
-    //Lazily download the therms and conditions in the appropriate language
-    //if we are on the terms.ftl page.
-    useEffect(
-        () => {
-
-            if (kcContext!.pageId !== "terms.ftl") {
-                return;
-            }
-
-            kcMessages[kcLanguageTag].termsTitle = "";
-
-            fetch((() => {
-                switch (kcLanguageTag) {
-                    case "fr": return tos_fr_url;
-                    default: return tos_en_url;
-                }
-            })())
-            .then(response => response.text())
-            .then(rawMarkdown => kcMessages[kcLanguageTag].termsText = rawMarkdown);
-
-        },
-        [kcLanguageTag]
-    );
-
-    return (
-        <KcAppBase
-            kcContext={kcContext}
-            {...{
-                ...defaultKcProps,
-                "kcHeaderWrapperClass": css({ "color": "red", "fontFamily": '"Work Sans"' })
-            }}
-        />
-    );
-}
