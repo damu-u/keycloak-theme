@@ -17,7 +17,6 @@ export const muiCache = createCache({
   "prepend": true
 });
 
-// @ts-ignore
 reactDom.render(
       <CacheProvider value={muiCache}>
         <ThemeProvider theme={theme}>
