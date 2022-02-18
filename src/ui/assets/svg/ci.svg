@@ -48,21 +48,21 @@
     <g id="g72" transform="translate(656.501 432.42)">
       <path d="m0 0-284.598-314.875-147.652 136.727" style="fill:none;stroke:#f5821f;stroke-width:1.361;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:626 628;stroke-dashoffset:627;animation:eSGskPTK_draw_15 9200ms ease-out 0ms infinite,eSGskPTK_fade 9200ms linear 0ms infinite" id="path74"/>
     </g>
-    <path d="M275.024 411.616h7.484v-35.418h-7.484z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-dasharray:86 88;stroke-dashoffset:87;animation:eSGskPTK_draw_16 9200ms ease-out 0ms infinite,eSGskPTK_fade 9200ms linear 0ms infinite" id="path76"/>
-    <path d="M531.853 411.616h7.484v-35.418h-7.484z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-dasharray:86 88;stroke-dashoffset:87;animation:eSGskPTK_draw_17 9200ms ease-out 0ms infinite,eSGskPTK_fade 9200ms linear 0ms infinite" id="path78"/>
-    <g id="g80" transform="translate(301.501 376.198)">
+    <path d="M245.024 591.616h7.484v-35.418h-7.484z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-dasharray:86 88;stroke-dashoffset:87;animation:eSGskPTK_draw_16 9200ms ease-out 0ms infinite,eSGskPTK_fade 9200ms linear 0ms infinite" id="path76"/>
+    <path d="M501.853 591.616h7.484v-35.418h-7.484z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-dasharray:86 88;stroke-dashoffset:87;animation:eSGskPTK_draw_17 9200ms ease-out 0ms infinite,eSGskPTK_fade 9200ms linear 0ms infinite" id="path78"/>
+    <g id="g80" transform="translate(271.501 556.198)">
       <path d="M0 0v35.418h7.008l25.773-26.25v26.25h7.02V0h-7.02L7.008 26.301V0Z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-dasharray:226 228;stroke-dashoffset:227;animation:eSGskPTK_draw_18 9200ms ease-out 0ms infinite,eSGskPTK_fade 9200ms linear 0ms infinite" id="path82"/>
     </g>
-    <g id="g84" transform="translate(472.36 376.198)">
+    <g id="g84" transform="translate(442.36 556.198)">
       <path d="M0 0v35.418h7.027l25.774-26.25v26.25h7.027V0h-7.027L7.027 26.301V0Z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-dasharray:226 228;stroke-dashoffset:227;animation:eSGskPTK_draw_19 9200ms ease-out 0ms infinite,eSGskPTK_fade 9200ms linear 0ms infinite" id="path86"/>
     </g>
-    <g id="g88" transform="translate(376.927 376.198)">
+    <g id="g88" transform="translate(346.927 556.198)">
       <path d="m0 0-20.16 35.418h8.277L3.102 9.102 18.09 35.418h7.211L5.145 0Z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-dasharray:163 165;stroke-dashoffset:164;animation:eSGskPTK_draw_20 9200ms ease-out 0ms infinite,eSGskPTK_fade 9200ms linear 0ms infinite" id="path90"/>
     </g>
-    <g id="g92" transform="translate(417.411 376.198)">
+    <g id="g92" transform="translate(387.411 556.198)">
       <path d="M0 0v35.418h35.418v-6.219H7.02v-7.715h23.89l-3.437-6.043H7.02V6.223h28.398V0Z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-dasharray:244 246;stroke-dashoffset:245;animation:eSGskPTK_draw_21 9200ms ease-out 0ms infinite,eSGskPTK_fade 9200ms linear 0ms infinite" id="path94"/>
     </g>
-    <g id="g96" transform="translate(568.255 389.647)">
+    <g id="g96" transform="translate(538.255 569.647)">
       <path d="M0 0h17.672L8.84 15.516Zm-14.727-13.449L5.422 21.969h6.859l20.078-35.418h-7.082l-4.351 7.754h-24.18l-4.398-7.754z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-dasharray:198 200;stroke-dashoffset:199;animation:eSGskPTK_draw_22 9200ms ease-out 0ms infinite,eSGskPTK_fade 9200ms linear 0ms infinite" id="path98"/>
     </g>
   </g>
