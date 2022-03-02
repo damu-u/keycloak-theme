@@ -82,18 +82,27 @@ export const Login = memo(
         });
       };
 
+      const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if(event.key === 'Enter') {
+          handleSubmit();
+        }
+      }
+
       const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
       };
 
-      const handleChange =
-          (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
-            setValues({...values, [prop]: event.target.value});
-          };
+      const handleChange = (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
+        setValues({...values, [prop]: event.target.value});
+      };
 
       return (
           <StyledLogin>
-            <LoginForm>
+            <LoginForm
+                ref={form}
+                method="post"
+                action={url.loginAction}
+            >
               <LoginInput
                   id="username"
                   name="username"
@@ -117,6 +126,7 @@ export const Login = memo(
                   type={values.showPassword ? 'text' : 'password'}
                   value={values.password}
                   onChange={handleChange('password')}
+                  onKeyPress={handleKeyPress}
                   InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">
