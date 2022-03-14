@@ -1,0 +1,32 @@
+name: Keycloak Theme Build Action
+
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2     # Git 소스코드 체크아웃
+
+      - name: Check Node v            # Check Node Version
+        run: node -v
+
+      - name: Check Yarn v            # Check Yarn Version
+        run: yarn -v
+
+      - name: Check Minio Client Version
+        run: mc -v
+
+      - name: Check Minio Host
+        run: mc config host ls minio
+
+      - name: Install Dependencies    # 의존 파일 설치
+        run: yarn install
+
+      - name: Yarn Build              # React Build / Theme Build
+        run: yarn keycloak
+
+      - name: Build the Docker image
+        run: docker build . --tag kds.inveniacorp.com/${{ github.repository }}/keycloak:latest
+
+      - name: Docker Push
+        run: docker push kds.inveniacorp.com/${{ github.repository }}/keycloak:latest

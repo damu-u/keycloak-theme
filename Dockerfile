@@ -6,4 +6,6 @@ WORKDIR /
 
 ADD configuration /opt/jboss/keycloak/standalone/configuration/
 
+COPY build_keycloak/target/*.jar /opt/jboss/keycloak/standalone/deployments/theme.jar
+
 ENTRYPOINT [ "/opt/jboss/tools/docker-entrypoint.sh" ]
