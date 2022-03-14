@@ -50,8 +50,7 @@ interface State {
 export const Login = memo(
     ({kcContext, ...props}: { kcContext: KcContext_Login } & KcProps) => {
       const form = useRef<HTMLFormElement>(null);
-      const {social, url, message, realm,} = kcContext;
-      const isSessionOut = message?.summary.includes('attempt timed out') || message?.summary.includes('Timeout');
+      const {url, message,} = kcContext;
 
       console.log(kcContext);
 
@@ -68,7 +67,7 @@ export const Login = memo(
         } else if (message?.summary === 'accountUpdatedMessage') {
           // toast.success(<Toast title={t('success.account.update')} message={t('success.account.update.message')} />);
         }
-      }, []);
+      });
 
       const [values, setValues] = React.useState<State>({
         password: '',
