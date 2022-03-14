@@ -25,6 +25,14 @@ jobs:
       - name: Yarn Build              # React Build / Theme Build
         run: yarn keycloak
 
+      - name: Login Docker
+        if: github.event_name != 'pull_request'
+        uses: actions/login-action@v1.10.0
+        with:
+          registry: kds.inveniacorp.com
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.PACKAGE }}
+
       - name: Build the Docker image
         run: docker build . --tag kds.inveniacorp.com/${{ github.repository }}/keycloak:latest
 
