@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {useRef, memo, useEffect} from 'react';
-import {Button, IconButton, InputAdornment, TextField} from '@mui/material';
+import {useRef, memo} from 'react';
+import {Alert, Button, IconButton, InputAdornment, TextField} from '@mui/material';
 import type {KcProps} from 'keycloakify/lib/components/KcProps';
 import {styled} from '@mui/material/styles';
 import type {KcContext} from "../KCApp/kcContext";
@@ -52,22 +52,9 @@ export const Login = memo(
       const form = useRef<HTMLFormElement>(null);
       const {url, message,} = kcContext;
 
-      console.log(kcContext);
-
       const handleSubmit = () => {
-        console.log(form);
         form?.current?.submit();
       };
-
-      useEffect(() => {
-        if (message?.summary === 'emailSentMessage') {
-          // toast.success(<Toast title={t('success.send.reset.password.email')} message={t('success.send.reset.password.email.default')} />);
-        } else if (message?.summary === 'expiredActionTokenSessionExistsMessage') {
-          // toast.error(<Toast title={t('error.session.expired')} message={t('error.session.expired.default')} />);
-        } else if (message?.summary === 'accountUpdatedMessage') {
-          // toast.success(<Toast title={t('success.account.update')} message={t('success.account.update.message')} />);
-        }
-      });
 
       const [values, setValues] = React.useState<State>({
         password: '',
@@ -82,7 +69,7 @@ export const Login = memo(
       };
 
       const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if(event.key === 'Enter') {
+        if (event.key === 'Enter') {
           handleSubmit();
         }
       }
@@ -97,6 +84,15 @@ export const Login = memo(
 
       return (
           <StyledLogin>
+            {message &&
+                <Alert
+                    variant="filled"
+                    severity={message.type}
+                >
+                  {message.summary}
+                </Alert>
+            }
+
             <LoginForm
                 ref={form}
                 method="post"
