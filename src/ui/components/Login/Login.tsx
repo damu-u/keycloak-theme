@@ -104,6 +104,7 @@ export const Login = memo(
                   variant="outlined"
                   label="Username"
                   color="secondary"
+                  autoComplete="off"
                   InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">
