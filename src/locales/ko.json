@@ -1,0 +1,9 @@
+{
+  "menu.main": "메인",
+  "menu.my": "내 정보",
+  "menu.services": "서비스",
+  "login": "로그인",
+  "id": "사번",
+  "email": "이메일",
+  "password": "비밀번호"
+}

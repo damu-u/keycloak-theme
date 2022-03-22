@@ -5,6 +5,7 @@ import type {KcProps} from 'keycloakify/lib/components/KcProps';
 import {styled} from '@mui/material/styles';
 import type {KcContext} from "../KCApp/kcContext";
 import {Person, Visibility, VisibilityOff, Lock} from "@mui/icons-material";
+import {useTranslation} from 'react-i18next';
 
 type KcContext_Login = Extract<KcContext, { pageId: 'login.ftl' }>;
 
@@ -49,6 +50,7 @@ interface State {
 
 export const Login = memo(
     ({kcContext, ...props}: { kcContext: KcContext_Login } & KcProps) => {
+      const {t} = useTranslation();
       const form = useRef<HTMLFormElement>(null);
       const {url, message,} = kcContext;
 
@@ -102,7 +104,7 @@ export const Login = memo(
                   id="username"
                   name="username"
                   variant="outlined"
-                  label="Username"
+                  label={t('id')}
                   color="secondary"
                   autoComplete="off"
                   InputProps={{
@@ -118,7 +120,7 @@ export const Login = memo(
                   name="password"
                   variant="outlined"
                   color="secondary"
-                  label="Password"
+                  label={t('password')}
                   type={values.showPassword ? 'text' : 'password'}
                   value={values.password}
                   onChange={handleChange('password')}
@@ -148,7 +150,7 @@ export const Login = memo(
                   onClick={() => handleSubmit()}
                   color="secondary"
               >
-                Login
+                {t('login')}
               </LoginButton>
             </LoginForm>
           </StyledLogin>

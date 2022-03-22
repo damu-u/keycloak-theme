@@ -1,4 +1,5 @@
 import * as reactDom from "react-dom";
+import './locales/i18n';
 import "./index.scss";
 import "./kcMessagesExtension"
 import {KcApp} from "./ui/components/KCApp/KcApp";
